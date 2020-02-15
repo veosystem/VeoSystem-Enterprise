@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace VeoSystem
 {
-    public partial class Form1 : Form
+    public partial class frmMdi : Form
     {
-        public Form1()
+        public frmMdi()
         {
             InitializeComponent();
         }
