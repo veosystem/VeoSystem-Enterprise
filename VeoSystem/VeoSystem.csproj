@@ -52,6 +52,7 @@
     <Compile Include="frmMdi.Designer.cs">
       <DependentUpon>frmMdi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\CatUsuario_Mdl.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmMdi.resx">
@@ -81,7 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controlador\" />
-    <Folder Include="Modelo\" />
+    <Folder Include="Modelo\Data\" />
     <Folder Include="Vista\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
