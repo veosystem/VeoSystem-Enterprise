@@ -46,16 +46,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmMdi.cs">
+    <Compile Include="Controlador\Empresa_Ctl.cs" />
+    <Compile Include="Modelo\CatSucursales_Mdl.cs" />
+    <Compile Include="Modelo\Data\Empresa_Cls.cs" />
+    <Compile Include="Modelo\Empresa_Mdl.cs" />
+    <Compile Include="Vista\Clases\Sistema_Cls.cs" />
+    <Compile Include="Vista\Inicio\frmBienvenida.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMdi.Designer.cs">
+    <Compile Include="Vista\Inicio\frmBienvenida.Designer.cs">
+      <DependentUpon>frmBienvenida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Inicio\frmLicencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Inicio\frmLicencia.Designer.cs">
+      <DependentUpon>frmLicencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Inicio\frmMdi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Inicio\frmMdi.Designer.cs">
       <DependentUpon>frmMdi.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\CatUsuario_Mdl.cs" />
+    <Compile Include="Modelo\Data\Conexion.cs" />
+    <Compile Include="Modelo\Data\CreaSucursal_Cls.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmMdi.resx">
+    <EmbeddedResource Include="Vista\Inicio\frmBienvenida.resx">
+      <DependentUpon>frmBienvenida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Inicio\frmLicencia.resx">
+      <DependentUpon>frmLicencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Inicio\frmMdi.resx">
       <DependentUpon>frmMdi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -80,10 +105,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controlador\" />
-    <Folder Include="Modelo\Data\" />
-    <Folder Include="Vista\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

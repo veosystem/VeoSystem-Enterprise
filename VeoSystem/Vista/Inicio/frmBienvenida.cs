@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace VeoSystem
+namespace VeoSystem.Vista.Inicio
 {
-    public partial class frmMdi : Form
+    public partial class frmBienvenida : Form
     {
-        public frmMdi()
+        public frmBienvenida()
         {
             InitializeComponent();
         }
