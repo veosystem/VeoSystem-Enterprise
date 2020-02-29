@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="C1.Win.C1Command.4, Version=4.0.20133.19597, Culture=neutral, PublicKeyToken=e808566f358766d8, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,16 +47,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controlador\Ciudad_Ctl.cs" />
     <Compile Include="Controlador\Empresa_Ctl.cs" />
+    <Compile Include="Controlador\Estado_Ctl.cs" />
+    <Compile Include="Controlador\Inicio_Ctl.cs" />
+    <Compile Include="Controlador\Pais_Ctl.cs" />
+    <Compile Include="Controlador\Servidor_Ctl.cs" />
     <Compile Include="Modelo\CatSucursales_Mdl.cs" />
+    <Compile Include="Modelo\Ciudad_Mdl.cs" />
+    <Compile Include="Modelo\Data\Ciudad_Cls.cs" />
     <Compile Include="Modelo\Data\Empresa_Cls.cs" />
+    <Compile Include="Modelo\Data\Estado_Cls.cs" />
+    <Compile Include="Modelo\Data\Inicio_Cls.cs" />
+    <Compile Include="Modelo\Data\Pais_Cls.cs" />
+    <Compile Include="Modelo\Data\Servidor_Cls.cs" />
     <Compile Include="Modelo\Empresa_Mdl.cs" />
+    <Compile Include="Modelo\Estado_Mdl.cs" />
+    <Compile Include="Modelo\Pais_Mdl.cs" />
+    <Compile Include="Modelo\Usuario_Mdl.cs" />
     <Compile Include="Vista\Clases\Sistema_Cls.cs" />
     <Compile Include="Vista\Inicio\frmBienvenida.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\Inicio\frmBienvenida.Designer.cs">
       <DependentUpon>frmBienvenida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Inicio\frmCambiaPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Inicio\frmCambiaPass.Designer.cs">
+      <DependentUpon>frmCambiaPass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Inicio\frmEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Inicio\frmEmpresa.Designer.cs">
+      <DependentUpon>frmEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Inicio\frmEmpSuc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Inicio\frmEmpSuc.Designer.cs">
+      <DependentUpon>frmEmpSuc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Inicio\frmInicioSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Inicio\frmInicioSesion.Designer.cs">
+      <DependentUpon>frmInicioSesion.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Inicio\frmLicencia.cs">
       <SubType>Form</SubType>
@@ -74,8 +113,27 @@
     <Compile Include="Modelo\Data\CreaSucursal_Cls.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vista\Inicio\frmServidor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Inicio\frmServidor.Designer.cs">
+      <DependentUpon>frmServidor.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Vista\Inicio\frmBienvenida.resx">
       <DependentUpon>frmBienvenida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Inicio\frmCambiaPass.resx">
+      <DependentUpon>frmCambiaPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Inicio\frmEmpresa.resx">
+      <DependentUpon>frmEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Inicio\frmEmpSuc.resx">
+      <DependentUpon>frmEmpSuc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Inicio\frmInicioSesion.resx">
+      <DependentUpon>frmInicioSesion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Inicio\frmLicencia.resx">
       <DependentUpon>frmLicencia.cs</DependentUpon>
@@ -92,6 +150,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vista\Inicio\frmServidor.resx">
+      <DependentUpon>frmServidor.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

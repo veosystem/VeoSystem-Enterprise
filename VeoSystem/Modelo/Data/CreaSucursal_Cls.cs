@@ -56,7 +56,7 @@ namespace VeoSystem.Modelo.Data
             int Mensaje = 0;
 
             SqlConnection cnObj = new SqlConnection();
-            cnObj = objConexion.Conectar_Maestro();
+            cnObj = objConexion.Conectar_Nube();
 
             if(cnObj != null)
             {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,11 +9,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VeoSystem.Controlador;
+using VeoSystem.Vista.Clases;
 
 namespace VeoSystem.Vista.Inicio
 {
     public partial class frmLicencia : Form
     {
+
+        BindingSource dbEmpresa = new BindingSource();
+
+        string Fecha = DateTime.Now.ToString("yyyyMMdd");
+
         public frmLicencia()
         {
             InitializeComponent();
@@ -115,6 +122,10 @@ namespace VeoSystem.Vista.Inicio
 
                 if (IngresaLicencia(Llave) == true)
                 {
+                   
+                    MessageBox.Show("Licencia Ingresada Correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
 
                 }
                 else
@@ -130,12 +141,38 @@ namespace VeoSystem.Vista.Inicio
         {
 
             Empresa_Ctl objEmpresa = new Empresa_Ctl();
-
-            BindingSource dbEmpresa = new BindingSource();
+     
             dbEmpresa.DataSource = objEmpresa.Empresa(Llave);
             if(dbEmpresa.Count > 0)
             {
-                return true;
+
+                if(objEmpresa.IngresaLicencia(Llave) == 1)
+                {
+
+                    string Encriptado = string.Empty;
+                    string FechaEncriptada = string.Empty;
+
+                    Encriptado = Sistema_Cls.Encripta(Llave);
+                    FechaEncriptada = Sistema_Cls.Encripta(Fecha);
+
+                    RegistryKey equipoLocal = Registry.CurrentUser;
+                    equipoLocal = equipoLocal.OpenSubKey(@"Software\\VeoSystem", true);
+
+                    equipoLocal = Registry.CurrentUser;
+                    equipoLocal = equipoLocal.OpenSubKey(@"Software", true);
+
+                    RegistryKey VeoSystem = equipoLocal.CreateSubKey("VeoSystem");
+
+                    VeoSystem.SetValue("Licencia", Encriptado, RegistryValueKind.String);
+                    VeoSystem.SetValue("FechaInst", FechaEncriptada, RegistryValueKind.String);
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                
             }
             else
             {

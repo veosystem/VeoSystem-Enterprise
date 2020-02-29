@@ -18,6 +18,23 @@ namespace VeoSystem.Controlador
             return objEmpresa.Empresa(Licencia);
         }
 
+        public List<Empresa_Mdl> DatosEmpresa(string Licencia)
+        {
+            return objEmpresa.DatosEmpresa(Licencia);
+        }
+
+        public int IngresaLicencia(string Licencia)
+        {
+
+            return objEmpresa.IngresaLicencia(Licencia);
+
+        }
+
+        public Boolean GuardaEmpresa(string Servidor, string Llave)
+        {
+            return objEmpresa.GuardaEmpresa(Servidor, Llave);
+        }
+
     }
 
 }
